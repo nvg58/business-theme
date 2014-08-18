@@ -1,4 +1,4 @@
 business-theme
 ==============
 
-A simple wordpress theme based on a given a html version
+A simple wordpress theme based on a given html version
