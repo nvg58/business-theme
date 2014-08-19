@@ -147,7 +147,7 @@ function wtm_scripts() {
 	wp_enqueue_script( 'wtm-easing', get_template_directory_uri() . "/js/jquery.easing.1.3.js" );
 	wp_enqueue_script( 'wtm-hoverIntent', get_template_directory_uri() . "/js/hoverIntent.js" );
 	wp_enqueue_script( 'wtm-sfmenu', get_template_directory_uri() . "/js/jquery.sfmenu.js" );
-//	wp_enqueue_script( 'wtm-retina', get_template_directory_uri() . "/js/retina.js" );
+	wp_enqueue_script( 'wtm-retina', get_template_directory_uri() . "/js/retina.js" );
 	wp_enqueue_script( 'wtm-custom', get_template_directory_uri() . "/js/custom.js" );
 	wp_enqueue_script( 'wtm-fancybox', get_template_directory_uri() . "/js/jquery.fancybox.js" );
 
@@ -192,19 +192,6 @@ function get_custom_excerpt( $limit = 24, $more = '', $wrapper = '', $has_link =
 
 	return $excerpt;
 }
-
-//add_filter( 'excerpt_more', 'custom_excerpt_more' );
-
-
-/**
- *  Custom excerpt length
- *
- */
-//function custom_excerpt_length( $length ) {
-//	return 24;
-//}
-//
-//add_filter( 'excerpt_length', 'custom_excerpt_length' );
 
 
 /**
