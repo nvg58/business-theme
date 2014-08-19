@@ -325,8 +325,8 @@ function create_case_study() {
 	register_post_type( 'case_study',
 		array(
 			'labels'        => array(
-				'name'          => __( 'Case Studies' ),
-				'singular_name' => __( 'Case Study' )
+				'name'          => __( 'Case Studies', 'wtm_' ),
+				'singular_name' => __( 'Case Study', 'wtm_' )
 			),
 			'supports'      => array( 'title', 'editor', 'thumbnail', 'custom-fields', ),
 			'public'        => true,
@@ -347,7 +347,7 @@ add_action( 'pre_get_posts', 'add_my_post_types_to_query' );
 
 function add_my_post_types_to_query( $query ) {
 	if ( is_home() && $query->is_main_query() ) {
-		$query->set( 'post_type', array( 'post', 'careers', 'case_study' ) );
+		$query->set( 'post_type', array( 'post', 'page', 'careers', 'case_study' ) );
 	}
 
 	return $query;

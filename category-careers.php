@@ -64,7 +64,7 @@ get_header();
 					<?php wp_reset_postdata(); ?>
 
 				<?php else : ?>
-					<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+					<p><?php _e( 'Sorry, no posts matched your criteria.', 'wtm_' ); ?></p>
 				<?php endif; ?>
 
 			</div>
@@ -72,7 +72,6 @@ get_header();
 			<div class="right_content">
 				<?php dynamic_sidebar( 'sidebar' ); ?>
 			</div>
-			<!-- .right_content -->
 
 			<?php if ( $the_query->max_num_pages > 1 ): ?>
 				<div class="pagination">
@@ -80,7 +79,7 @@ get_header();
 					<?php echo wtm_pagination( $the_query->max_num_pages, $the_query ); ?>
 
 				</div>
-				<!-- .pagination -->
+				<!-- End of pagination -->
 			<?php endif;
 			wp_reset_query( $the_query );
 			?>
@@ -90,3 +89,5 @@ get_header();
 
 <?php
 get_footer();
+
+

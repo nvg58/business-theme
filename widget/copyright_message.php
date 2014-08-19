@@ -42,7 +42,7 @@ class Copyright_Message_Widget extends WP_Widget {
 		}
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'message' ); ?>"><?php _e( 'Message:' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'message' ); ?>"><?php _e( 'Message:', 'wtm_' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'message' ); ?>"
 			       name="<?php echo $this->get_field_name( 'message' ); ?>" type="text"
 			       value="<?php echo esc_attr( $message ); ?>">
