@@ -9,18 +9,17 @@
 ?>
 	<?php get_header( 'home' )?>
 
-	<!-- Start of breadcrumb wrapper -->
 	<div class="breadcrumb_wrapper">
 
-		<!-- Start of breadcrumb -->
 		<div class="breadcrumb">
 
 			<ul>
 				<?php echo wtm_breadcrumb(); ?>
 			</ul>
 
-		</div><!-- End of breadcrumb -->
+		</div><!-- .breadcrumb -->
 
-		<!-- Clear Fix --><div class="clear"></div>
+		<div class="clear"></div>
 
-	</div><!-- End of breadcrumb wrapper -->
+	</div><!-- .breadcrumb_wrapper -->
+	

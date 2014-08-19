@@ -31,6 +31,7 @@ get_header();
 			<div class="right_content">
 				<?php dynamic_sidebar( 'sidebar' ); ?>
 			</div>
+			<!-- .right_content -->
 
 		</div>
 		<!-- .content_wrapper -->
