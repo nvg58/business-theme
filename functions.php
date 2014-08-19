@@ -151,6 +151,9 @@ function wtm_scripts() {
 	wp_enqueue_script( 'wtm-custom', get_template_directory_uri() . "/js/custom.js" );
 	wp_enqueue_script( 'wtm-fancybox', get_template_directory_uri() . "/js/jquery.fancybox.js" );
 
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'wtm_scripts' );

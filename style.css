@@ -7,7 +7,7 @@ Description:  Modern crisp business template using HTML 5 & CSS3.
 Version:  1.0
 Author:  Johnson Baby
 Author URI:  http://themeforest.net/johnsonbaby0111
-Tags:  HTML5, Clean, Modern, Business
+ags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
 */
 
 /*  RESET  */
@@ -3411,3 +3411,12 @@ body{
 }
 
 /*  END OF MEDIA QUERIES */
+
+/* My hacks */
+.comment-content a {
+    word-wrap: break-word;
+}
+
+.bypostauthor {
+    display: block;
+}
