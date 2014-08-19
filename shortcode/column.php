@@ -9,8 +9,7 @@
  */
 function wtm_column_shortcode( $atts, $content = '' ) {
 	extract( shortcode_atts( array(
-		'class' => '',
-		'order' => ''
+		'class' => ''
 	), $atts ) );
 
 	$out = sprintf(
