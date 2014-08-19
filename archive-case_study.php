@@ -61,7 +61,7 @@ get_header(); ?>
 					<?php echo wtm_pagination( $loop->max_num_pages, $loop ); ?>
 
 				</div>
-				<!-- End of pagination -->
+				<!-- .pagination -->
 			<?php endif;
 			wp_reset_query( $loop );
 			?>
