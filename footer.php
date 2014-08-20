@@ -8,40 +8,34 @@
  */
 ?>
 
-<!-- Start of bottom wrapper -->
 <div id="bottom_wrapper">
 
-	<!-- Start of content wrapper -->
 	<div class="content_wrapper">
 
 		<?php dynamic_sidebar( 'footerbar' ); ?>
 
 	</div>
-	<!-- End of content wrapper -->
+	<!-- .content_wrapper -->
 
-	<!-- Clear Fix -->
 	<div class="clear"></div>
 
 </div>
-<!-- End of bottom wrapper -->
+<!-- .bottom_wrapper -->
 
 
-<!-- Start of copyright wrapper -->
 <div id="copyright_wrapper">
 
-	<!-- Start of content wrapper -->
 	<div class="content_wrapper">
 
 		<?php dynamic_sidebar( 'copyrightbar' ); ?>
 
 	</div>
-	<!-- End of content wrapper -->
+	<!-- .content_wrapper -->
 
-	<!-- Clear Fix -->
 	<div class="clear"></div>
 
 </div>
-<!-- End of copyright wrapper -->
+<!-- .copyright_wrapper -->
 
 <?php wp_footer(); ?>
 

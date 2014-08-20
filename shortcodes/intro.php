@@ -11,7 +11,8 @@ function wtm_intro_shortcode( $atts, $content = '' ) {
 	$out = sprintf(
 		'<div class="intro">
            %s
-		</div><!-- .intro -->',
+		</div>
+		<!-- .intro -->',
 		do_shortcode( $content )
 	);
 	return $out;

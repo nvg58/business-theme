@@ -2,8 +2,8 @@
 /**
  * Shortcode to display a basic contact form
  *
- * @param array $atts Shortcode attribute
- * @param string $content Shortcode content
+ * @param array     $atts       Shortcode attribute
+ * @param string    $content    Shortcode content
  *
  * @return string
  */

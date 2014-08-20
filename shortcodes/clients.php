@@ -17,11 +17,13 @@ function wtm_clients_shortcode( $atts, $content = '' ) {
 		'<h3 class="blue">%s</h3>
 		<div class="viewall">
 			<a href="%s">View all</a>
-		</div><!-- .viewall -->
+		</div>
+		<!-- .viewall -->
 
 		<div class="homepage_slider_section">
 	        %s
-	    </div><!-- .homepage_slider_section -->',
+	    </div>
+	    <!-- .homepage_slider_section -->',
 		$title,
 		$viewall_url,
 		do_shortcode( $content )

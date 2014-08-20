@@ -8,12 +8,25 @@
  * @return string
  */
 function wtm_quote_shortcode( $atts, $content = '' ) {
+	extract( array(
+		'pos' => ''
+	), $atts );
+
+	if ( $pos == '' ) {
+		$class = 'quote';
+	} else {
+		$class = 'pullquote' . $pos;
+	}
+
 	$out = sprintf(
-		'<div class="quote">
+		'<div class="%s">
            %s
-		</div><!-- .quote -->',
+		</div>
+		<!-- .quote -->',
+		$class,
 		do_shortcode( $content )
 	);
+
 	return $out;
 }
 
@@ -22,8 +35,8 @@ add_shortcode( 'quote', 'wtm_quote_shortcode' );
 /**
  * Shortcode to display a quotation on the left
  *
- * @param array     $atts       Shortcode attribute
- * @param string    $content    Shortcode content
+ * @param array $atts Shortcode attribute
+ * @param string $content Shortcode content
  *
  * @return string
  */
@@ -43,8 +56,8 @@ add_shortcode( 'left_quote', 'wtm_left_quote_shortcode' );
 /**
  * Shortcode to display a quotation on the right
  *
- * @param array     $atts       Shortcode attribute
- * @param string    $content    Shortcode content
+ * @param array $atts Shortcode attribute
+ * @param string $content Shortcode content
  *
  * @return string
  */
@@ -52,7 +65,8 @@ function wtm_right_quote_shortcode( $atts, $content = '' ) {
 	$out = sprintf(
 		'<div class="pullquoteright">
 			%s
-		</div><!-- .pullquoteleft -->',
+		</div>
+		<!-- .pullquoteright -->',
 		do_shortcode( $content )
 	);
 

@@ -12,9 +12,11 @@ function wtm_content_wrapper_shortcode( $atts, $content = '' ) {
 		'<div id="contentwrapper">
 			<div class="content_wrapper">
 				%s
-			</div><!-- #contentwrapper -->
+			</div>
+			<!-- #contentwrapper -->
 			<div class="clear"></div>
-		</div><!-- .content_wrapper -->
+		</div>
+		<!-- .content_wrapper -->
 		<div class="clear"></div>',
 		do_shortcode( $content )
 	);

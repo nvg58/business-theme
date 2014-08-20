@@ -43,7 +43,8 @@ get_header();
 
 		<div class="clear"></div>
 
-	</div><!-- #contentwrapper -->
+	</div>
+	<!-- #contentwrapper -->
 
 <?php
 get_footer();

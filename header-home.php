@@ -37,28 +37,19 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<!-- Start of top wrapper -->
+
 <div id="top_wrapper">
 
-	<!-- Start of content wrapper -->
 	<div class="content_wrapper">
 
-		<!-- Start of topsubmenu -->
 		<div class="topsubmenu">
 
-			<ul>
-				<li><a href="#">Work With Us</a></li>
-				<li><a href="#">Development Cycle</a></li>
-				<li><a href="#">Affiliates</a></li>
-				<li><a href="#">Client Login</a></li>
-			</ul>
+			<?php wp_nav_menu( array( 'theme_location' => 'topmenu' ) ) ?>
 
-		</div><!-- End of topsubmenu -->
+		</div>
+		<!-- .topsubmenu -->
 
-		<!-- Start of searchbox -->
 		<div id="searchbox">
-
-			<!-- Start of search box -->
 
 			<form role="search" method="get" id="searchform" action="#">
 
@@ -66,49 +57,49 @@
 				<span class="searchme"></span>
 			</form>
 
-			<!-- End of searchbox -->
+		</div>
+		<!-- .searchbox -->
 
-		</div><!-- End of searchbox -->
+	</div>
+	<!-- .content_wrapper -->
 
-	</div><!-- End of content wrapper -->
+	<div class="clear"></div>
 
-	<!-- Clear Fix --><div class="clear"></div>
+</div>
+<!-- .top_wrapper -->
 
-</div><!-- End of top wrapper -->
-
-<!-- Start of header wrapper -->
 <div id="header_wrapper">
 
-	<!-- Start of content wrapper -->
 	<div class="content_wrapper">
 
-		<!-- Start of logo -->
 		<div id="logo">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_template_directory_uri() . '/img/toplogo.png' ?>" width="213" height="33" alt="Business Essentials" /></a>
 
-		</div><!-- End of logo -->
+		</div>
+		<!-- .logo -->
 
-		<!-- Start of top menu wrapper -->
 		<div class="topmenuwrapper">
 
-			<!-- Start of topmenu -->
 			<nav class="topmenu">
 
 				<?php wtm_process_nav_menu(); ?>
 
 			</nav>
-			<!-- End of topmenu -->
+			<!-- .topmenu -->
 
-			<!-- Start of header phone -->
 			<div class="header_phone">
+
 				Toll Free: 0800 123 456 7890
 
-			</div><!-- End of header phone -->
+			</div>
+			<!-- .header_phone -->
 
-			<!-- Clear Fix --><div class="clear"></div>
-		</div><!-- End of top menu wrapper -->
+			<div class="clear"></div>
+		</div>
+		<!-- .topmenuwrapper -->
 
-	</div><!-- End of content wrapper -->
+	</div>
+	<!-- .content_wrapper -->
 
-</div><!-- End of header wrapper -->
-
+</div>
+<!-- .header_wrapper -->

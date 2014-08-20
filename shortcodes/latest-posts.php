@@ -26,7 +26,8 @@ function wtm_latest_posts_shortcode( $atts, $content = '' ) {
 
 	$out .= latest_posts_slides();
 
-	$out .= '</div><!-- .homepage_slider_section -->';
+	$out .= '</div>
+			<!-- .homepage_slider_section -->';
 
 	return $out;
 }
@@ -67,7 +68,8 @@ function latest_posts_slides() {
 	endif;
 	$out .= '
 			</ul>
-		</section><!-- .slider -->
+		</section>
+		<!-- .slider -->
 	';
 
 	return $out;

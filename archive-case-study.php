@@ -31,7 +31,8 @@ get_header(); ?>
 					$case_study_image = sprintf(
 						'<div class="casestudy_image">
 							<a href="%s">%s</a>
-						</div><!-- .casestudy_image -->',
+						</div>
+						<!-- .casestudy_image -->',
 						get_the_permalink(),
 						get_the_post_thumbnail( get_the_ID(), $size )
 					);

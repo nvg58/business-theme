@@ -15,7 +15,8 @@ function wtm_accordion_shortcode( $atts, $content = '' ) {
 
 	$out = sprintf(
 		'<div class="accordionButton" id="%s">%s
-		</div><!-- .accordionButton -->
+		</div>
+		<!-- .accordionButton -->
 		<div class="accordionContent">
 			<p>%s</p>
 		</div>',

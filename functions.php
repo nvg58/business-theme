@@ -40,6 +40,14 @@ if ( ! function_exists( 'wtm_setup' ) ) :
 
 
 		/*
+		 * Register top menu
+		 */
+		register_nav_menus( array(
+			'topmenu' => __( 'Top Menu', 'wtm_' ),
+		) );
+
+
+		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
@@ -84,24 +92,24 @@ require get_template_directory() . '/inc/template-tags.php';
 /**
  * Shortcode for this theme
  */
-require get_template_directory() . '/shortcode.php';
+require get_template_directory() . '/inc/shortcodes.php';
 
 
 /**
  * Widgets for this theme
  */
-require get_template_directory() . '/widget.php';
+require get_template_directory() . '/inc/widgets.php';
 
 
 /**
- * Register widget area.
+ * Register widgets area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function wtm_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'wtm_' ),
-		'id'            => 'right',
+		'id'            => 'sidebar',
 		'description'   => '',
 		'before_widget' => '',
 		'after_widget'  => '',
@@ -251,9 +259,8 @@ function add_menu_parent_class( $items ) {
 remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_excerpt', 'wpautop' );
 
-
 /*
- * Register Copyright_Message_Widget widget
+ * Register Copyright_Message_Widget widgets
  */
 function register_copyright_message_widget() {
 	register_widget( 'Copyright_Message_Widget' );
@@ -263,7 +270,7 @@ add_action( 'widgets_init', 'register_copyright_message_widget' );
 
 
 /*
- * Register Social_Icons_Widget widget
+ * Register Social_Icons_Widget widgets
  */
 function register_social_icons_widget() {
 	register_widget( 'Social_Icons_Widget' );

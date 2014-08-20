@@ -3,7 +3,7 @@
 ***************************************************************************/
 
 /*
- * Superfish v1.4.8 - jQuery menu widget
+ * Superfish v1.4.8 - jQuery menu widgets
  * Copyright (c) 2008 Joel Birch
  *
  * Dual licensed under the MIT and GPL licenses:
@@ -31,7 +31,7 @@
 					o.retainPath=($.inArray($$[0],o.$path)>-1);
 					$$.hideSuperfishUl();
 					if (o.$path.length && $$.parents(['li.',o.hoverClass].join('')).length<1){over.call(o.$path);}
-				},o.delay);	
+				},o.delay);
 			},
 			getMenu = function($menu){
 				var menu = $menu.parents(['ul.',c.menuClass,':first'].join(''))[0];
@@ -39,7 +39,7 @@
 				return menu;
 			},
 			addArrow = function($a){ $a.addClass(c.anchorClass).append($arrow.clone()); };
-			
+
 		return this.each(function() {
 			var s = this.serial = sf.o.length;
 			var o = $.extend({},sf.defaults,op);
@@ -48,20 +48,20 @@
 					.filter('li:has(ul)').removeClass(o.pathClass);
 			});
 			sf.o[s] = sf.op = o;
-			
+
 			$('li:has(ul)',this)[($.fn.hoverIntent && !o.disableHI) ? 'hoverIntent' : 'hover'](over,out).each(function() {
 				if (o.autoArrows) addArrow( $('>a:first-child',this) );
 			})
 			.not('.'+c.bcClass)
 				.hideSuperfishUl();
-			
+
 			var $a = $('a',this);
 			$a.each(function(i){
 				var $li = $a.eq(i).parents('li');
 				$a.eq(i).focus(function(){over.call($li);}).blur(function(){out.call($li);});
 			});
 			o.onInit.call(this);
-			
+
 		}).each(function() {
 			var menuClasses = [c.menuClass];
 			if (sf.op.dropShadows  && !($.browser.msie && $.browser.version < 7)) menuClasses.push(c.shadowClass);
@@ -90,7 +90,7 @@
 		pathLevels	: 1,
 		delay		: 800,
 		animation	: {opacity:'show',height:'show'},
-		speed		: 'normal', 
+		speed		: 'normal',
 		autoArrows	: true,
 		dropShadows : true,
 		disableHI	: false,		// true disables hoverIntent detection
@@ -163,7 +163,7 @@
 			// cache all ul elements
 			$ULs = $$.find('ul');
 			// loop through each ul in menu
-			$ULs.each(function(i) {	
+			$ULs.each(function(i) {
 				// cache this ul
 				var $ul = $ULs.eq(i);
 				// get all (li) children of this ul
@@ -203,7 +203,7 @@
 					$childUl.css(offsetDirection,emWidth);
 				});
 			});
-			
+
 		});
 	};
 	// expose defaults
@@ -212,17 +212,17 @@
 		maxWidth		: 25,		// requires em unit.
 		extraWidth		: 0			// extra width can ensure lines don't sometimes turn over due to slight browser differences in how they round-off values
 	};
-	
+
 })(jQuery); // plugin code ends
 
- jQuery(document).ready(function(){ 
-jQuery("ul.sf-menu").supersubs({ 
-minWidth:    10,   // minimum width of sub-menus in em units 
-maxWidth:    45,   // maximum width of sub-menus in em units 
-extraWidth:  1     // extra width can ensure lines don't sometimes turn over 
-				   // due to slight rounding differences and font-family 
-}).superfish();  // call supersubs first, then superfish, so that subs are 
-			 // not display:none when measuring. Call before initialising 
-			 // containing tabs for same reason. 
-}); 
+ jQuery(document).ready(function(){
+jQuery("ul.sf-menu").supersubs({
+minWidth:    10,   // minimum width of sub-menus in em units
+maxWidth:    45,   // maximum width of sub-menus in em units
+extraWidth:  1     // extra width can ensure lines don't sometimes turn over
+				   // due to slight rounding differences and font-family
+}).superfish();  // call supersubs first, then superfish, so that subs are
+			 // not display:none when measuring. Call before initialising
+			 // containing tabs for same reason.
+});
 

@@ -11,7 +11,6 @@ get_header();
 
 		<div class="content_wrapper">
 
-
 			<?php
 			if ( have_posts() ) :
 				while ( have_posts() ) : the_post();
@@ -37,7 +36,8 @@ get_header();
 
 		<div class="clear"></div>
 
-	</div><!-- #contentwrapper -->
+	</div>
+	<!-- #contentwrapper -->
 
 <?php
 get_footer();

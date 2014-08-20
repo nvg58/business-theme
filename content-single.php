@@ -26,16 +26,10 @@
 
 	<div class="clear"></div>
 
-</div><!-- .post_details -->
+</div>
+<!-- .post_details -->
 
 <?php the_content(); ?>
 
 <div class="clear"></div>
 
-<!-- AddThis Button -->
-<div class="addthis_toolbox addthis_default_style" style="margin-top:25px;">
-	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-	<a class="addthis_button_tweet"></a>
-	<a class="addthis_button_pinterest_pinit"></a>
-</div>
-<script type="text/javascript" src="../../s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5137b5c920cf5f9f"></script>

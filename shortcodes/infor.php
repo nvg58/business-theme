@@ -1,6 +1,6 @@
 <?php
 /**
- * Information shortcode with image, title, description
+ * Information shortcodes with image, title, description
  *
  * @param array     $atts       Shortcode attributes
  * @param string    $content    Shortcode content

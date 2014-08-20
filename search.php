@@ -10,6 +10,10 @@ get_header();
 ?>
 	<div id="contentwrapper">
 		<div class="content_wrapper">
+			<header class="page-header">
+				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'wtm_' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+			</header>
+			<!-- .page-header -->
 
 			<div class="left_content">
 				<?php
@@ -22,6 +26,7 @@ get_header();
 				}
 
 				$args      = array(
+					's'              => get_search_query(),
 					'posts_per_page' => 4,
 					'paged'          => $paged
 				);
@@ -72,7 +77,7 @@ get_header();
 					<?php echo wtm_pagination( $the_query->max_num_pages, $the_query ); ?>
 
 				</div>
-				<!-- End of pagination -->
+				<!-- .pagination -->
 			<?php endif;
 			wp_reset_query( $the_query );
 			?>
@@ -82,6 +87,3 @@ get_header();
 
 <?php
 get_footer();
-
-
-

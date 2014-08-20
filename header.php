@@ -17,9 +17,11 @@
 				<?php echo wtm_breadcrumb(); ?>
 			</ul>
 
-		</div><!-- .breadcrumb -->
+		</div>
+		<!-- .breadcrumb -->
 
 		<div class="clear"></div>
 
-	</div><!-- .breadcrumb_wrapper -->
-	
+	</div>
+	<!-- .breadcrumb_wrapper -->
+

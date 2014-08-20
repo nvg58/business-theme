@@ -79,7 +79,7 @@ get_header();
 					<?php echo wtm_pagination( $the_query->max_num_pages, $the_query ); ?>
 
 				</div>
-				<!-- End of pagination -->
+				<!-- .pagination -->
 			<?php endif;
 			wp_reset_query( $the_query );
 			?>
