@@ -99,7 +99,7 @@ get_header(); ?>
 			<?php if ( $loop->max_num_pages > 1 ): ?>
 				<div class="pagination">
 
-					<?php echo wtm_pagination( $loop->max_num_pages, $loop ); ?>
+					<?php echo wtm_pagination( $loop ); ?>
 
 				</div>
 				<!-- .pagination -->

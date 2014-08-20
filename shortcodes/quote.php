@@ -8,9 +8,9 @@
  * @return string
  */
 function wtm_quote_shortcode( $atts, $content = '' ) {
-	extract( array(
+	extract( shortcode_atts( array(
 		'pos' => ''
-	), $atts );
+	), $atts ) );
 
 	if ( $pos == '' ) {
 		$class = 'quote';

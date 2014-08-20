@@ -245,41 +245,15 @@ endif;
 if ( ! function_exists( 'wtm_pagination' ) ) : /**
  *  Display Pagination
  */ {
-	function wtm_pagination( $pages = '', $wp_query ) {
-		$out   = null;
-		$paged = $wp_query->query_vars['paged'];
-		if ( empty( $paged ) ) {
-			$paged = 1;
-		}
+	function wtm_pagination( $the_query ) {
+		$big = 999999999; // need an unlikely integer
 
-		if ( $pages == '' ) {
-			$pages = $wp_query->max_num_pages;
-			if ( ! $pages ) {
-				$pages = 1;
-			}
-		}
-
-		$out .= sprintf(
-			'<span>Page %s of %s</span>',
-			$paged,
-			$pages
-		);
-
-		if ( $pages != 1 ) {
-			for ( $i = 1; $i <= $pages; $i ++ ) {
-				if ( $i == $pages ) {
-					$out .= sprintf(
-						'<a %s href="%s">Last &raquo;</a>',
-						$paged == $i ? 'class="current"' : '',
-						get_pagenum_link( $i )
-					);
-				} else {
-					$out .= ( $paged == $i ) ?
-						"<span class='current'>" . $i . "</span>" :
-						"<a href='" . get_pagenum_link( $i ) . "' class='inactive'>" . $i . "</a>";
-				}
-			}
-		}
+		$out = paginate_links( array(
+			'base'    => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format'  => '?paged=%#%',
+			'current' => max( 1, get_query_var( 'paged' ) ),
+			'total'   => $the_query->max_num_pages
+		) );
 
 		return $out;
 	}

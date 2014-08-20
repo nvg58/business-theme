@@ -19,13 +19,17 @@ get_header();
 
 			<div class="left_content">
 				<?php
-				if ( get_query_var( 'paged' ) ) {
-					$paged = get_query_var( 'paged' );
-				} elseif ( get_query_var( 'page' ) ) {
-					$paged = get_query_var( 'page' );
-				} else {
-					$paged = 1;
-				}
+				//				if ( get_query_var( 'paged' ) ) {
+				//					$paged = get_query_var( 'paged' );
+				//				} elseif ( get_query_var( 'page' ) ) {
+				//					$paged = get_query_var( 'page' );
+				//				} else {
+				//					$paged = 1;
+				//				}
+
+
+				//Protect against arbitrary paged values
+				$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
 				$args      = array(
 					'category_name'  => 'careers',
@@ -76,7 +80,7 @@ get_header();
 			<?php if ( $the_query->max_num_pages > 1 ): ?>
 				<div class="pagination">
 
-					<?php echo wtm_pagination( $the_query->max_num_pages, $the_query ); ?>
+					<?php echo wtm_pagination( $the_query ); ?>
 
 				</div>
 				<!-- .pagination -->
