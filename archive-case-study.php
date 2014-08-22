@@ -31,8 +31,7 @@ get_header(); ?>
 					$case_study_image = sprintf(
 						'<div class="casestudy_image">
 							<a href="%s">%s</a>
-						</div>
-						<!-- .casestudy_image -->',
+						</div>',
 						get_the_permalink(),
 						get_the_post_thumbnail( get_the_ID(), $size )
 					);
@@ -62,17 +61,14 @@ get_header(); ?>
 					<?php echo wtm_pagination( $loop ); ?>
 
 				</div>
-				<!-- .pagination -->
 			<?php endif;
 			wp_reset_query( $loop );
 			?>
 		</div>
-		<!-- .content_wrapper -->
 
 		<div class="clear"></div>
 
 	</div>
-	<!-- .contentwrapper -->
 
 <?php
 get_footer();

@@ -10,7 +10,8 @@
 function wtm_latest_posts_shortcode( $atts, $content = '' ) {
 	extract( shortcode_atts( array(
 		'title'       => 'Latest blog',
-		'viewall_url' => 'blog'
+		'viewall_url' => 'blog',
+		'post_count'  => 3
 	), $atts ) );
 
 	$out = sprintf(
@@ -24,7 +25,7 @@ function wtm_latest_posts_shortcode( $atts, $content = '' ) {
 
 	$out .= '<div class="homepage_slider_section">';
 
-	$out .= latest_posts_slides();
+	$out .= latest_posts_slides( $post_count );
 
 	$out .= '</div>';
 
@@ -37,8 +38,11 @@ add_shortcode( 'latest_posts', 'wtm_latest_posts_shortcode' );
 /**
  * @return string
  */
-function latest_posts_slides() {
-	$args     = array( 'post_type' => 'post' );
+function latest_posts_slides( $post_count = 3 ) {
+	$args     = array(
+		'post_type' => 'post',
+		'posts_per_page' => $post_count
+	);
 	$wp_query = new WP_Query( $args );
 	$out      = '
 		<section class="slider">

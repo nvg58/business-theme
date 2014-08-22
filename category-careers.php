@@ -53,7 +53,7 @@ get_header();
 
 								<div class="post_read_more">
 									<a href="<?php echo get_the_permalink(); ?>">Continue Reading<img
-											src="<?php echo TEMLATE_PATH_URI; ?>img/red-hoverarrow.png"
+											src="<?php echo TEMPLATE_PATH_URI; ?>img/red-hoverarrow.png"
 											width="15" height="15" alt="red arrow"/></a>
 								</div>
 								<!-- .post_read_more -->

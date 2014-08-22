@@ -41,7 +41,7 @@ class WTM_Social_Icons_Widget extends WP_Widget {
 						<img src="%2$s/img/social/white/%3$s.png" width="30" height="30" alt="%3$s" />
 					</a> ',
 					$instance[ $icon ],
-					TEMLATE_PATH_URI,
+					TEMPLATE_PATH_URI,
 					$icon
 				);
 				echo $social_link;

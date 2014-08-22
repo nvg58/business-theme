@@ -5,8 +5,8 @@
  * @package wtm_
  */
 
-define( 'TEMLATE_PATH', trailingslashit( get_template_directory() ) );
-define( 'TEMLATE_PATH_URI', trailingslashit( get_template_directory_uri() ) );
+define( 'TEMPLATE_PATH', trailingslashit( get_template_directory() ) );
+define( 'TEMPLATE_PATH_URI', trailingslashit( get_template_directory_uri() ) );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -21,7 +21,7 @@ if ( ! function_exists( 'wtm_setup' ) ) :
 		/*
 		 * Make theme available for translation.
 		 */
-		load_theme_textdomain( 'wtm_', TEMLATE_PATH . 'languages' );
+		load_theme_textdomain( 'wtm_', TEMPLATE_PATH . 'languages' );
 
 		/*
 		 * Add default posts and comments RSS feed links to head.
@@ -89,19 +89,19 @@ add_action( 'after_setup_theme', 'wtm_setup' );
 /**
  * Custom template tags for this theme.
  */
-require TEMLATE_PATH . 'inc/template-tags.php';
+require TEMPLATE_PATH . 'inc/template-tags.php';
 
 
 /**
  * Shortcode for this theme
  */
-require TEMLATE_PATH . 'inc/shortcodes/shortcodes.php';
+require TEMPLATE_PATH . 'inc/shortcodes/shortcodes.php';
 
 
 /**
  * Widgets for this theme
  */
-require TEMLATE_PATH . 'inc/widgets/widgets.php';
+require TEMPLATE_PATH . 'inc/widgets/widgets.php';
 
 
 /**
@@ -180,7 +180,6 @@ add_action( 'wp_enqueue_scripts', 'wtm_scripts' );
  * @return array|mixed|string
  */
 function get_custom_excerpt( $limit = 24, $more = '', $wrapper = '', $has_link = true ) {
-	$link = '';
 	if ( $has_link ) {
 		$link = '<a class="more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( $more, 'wtm_' ) . '</a>';
 
@@ -293,7 +292,6 @@ function custom_staff_post_type() {
 		'description'         => __( 'Show staffs', 'wtm_' ),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'thumbnail', 'custom-fields', ),
-		'taxonomies'          => array( 'category', 'post_tag' ),
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,
@@ -308,6 +306,7 @@ function custom_staff_post_type() {
 		'capability_type'     => 'page',
 	);
 	register_post_type( 'staff', $args );
+
 }
 
 // Hook into the 'init' action
@@ -346,4 +345,36 @@ function add_my_post_types_to_query( $query ) {
 	}
 
 	return $query;
+}
+
+
+add_action( 'init', 'create_staff_taxonomies' );
+
+// create two taxonomies, genres and writers for the post type "staff"
+function create_staff_taxonomies() {
+	// Add new taxonomy, make it hierarchical (like categories)
+	$labels = array(
+		'name'              => _x( 'Positions', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Position', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Positions' ),
+		'all_items'         => __( 'All Positions' ),
+		'parent_item'       => __( 'Parent Position' ),
+		'parent_item_colon' => __( 'Parent Position:' ),
+		'edit_item'         => __( 'Edit Position' ),
+		'update_item'       => __( 'Update Position' ),
+		'add_new_item'      => __( 'Add New Position' ),
+		'new_item_name'     => __( 'New Position Name' ),
+		'menu_name'         => __( 'Positions' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+	);
+
+	register_taxonomy( 'position', 'staff', $args );
+//	register_taxonomy_for_object_type( 'position', 'staff' );
 }
