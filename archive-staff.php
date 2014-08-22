@@ -77,9 +77,9 @@ get_header(); ?>
 							foreach ( $icons as $icon ) {
 								if ( get_post_meta( get_the_ID(), $icon, true ) != null ) {
 									$social_link = sprintf(
-										'<a href="%1$s"><img src="%2$s/img/social/black/%3$s.gif" width="30" height="30" alt="%3$s" /></a> ',
+										'<a href="%1$s"><img src="%2$simg/social/black/%3$s.gif" width="30" height="30" alt="%3$s" /></a> ',
 										get_post_meta( get_the_ID(), $icon, true ),
-										get_template_directory_uri(),
+										TEMLATE_PATH_URI,
 										$icon
 									);
 									echo $social_link;

@@ -12,8 +12,7 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?php wp_title( '|', true, 'right' );
-		bloginfo( 'name' ) ?></title>
+	<title><?php wp_title( '|', true, 'right' ); ?></title>
 
 	<!--[if IE 7 ]>
 	<html class="ie7"> <![endif]-->
@@ -81,7 +80,7 @@
 
 		<div id="logo">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img
-					src="<?php echo get_template_directory_uri() . '/img/toplogo.png' ?>" width="213" height="33"
+					src="<?php echo TEMPLATE_PATH_URI . 'img/toplogo.png' ?>" width="213" height="33"
 					alt="Business Essentials"/></a>
 
 		</div>

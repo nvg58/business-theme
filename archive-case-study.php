@@ -27,7 +27,7 @@ get_header(); ?>
 			if ( $loop->have_posts() ): $i = - 1;
 				while ( $loop->have_posts() ) : $loop->the_post();
 
-					$size = ($i == -1) ? 'full' : 'medium';
+					$size             = ( $i == - 1 ) ? 'full' : 'medium';
 					$case_study_image = sprintf(
 						'<div class="casestudy_image">
 							<a href="%s">%s</a>

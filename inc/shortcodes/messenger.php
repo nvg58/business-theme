@@ -20,18 +20,14 @@ function wtm_message_shortcode( $atts, $content = null ) {
 		        <div class="contentleft">
 		        	<p>%s</p>
 		        </div>
-		        <!-- .contentleft -->
 		        <div class="contentright">
 		        	<div class="button_green_image">
 		        		<a href="%s">%s</a>
 					</div>
 		        </div>
-		        <!-- .contentright -->
 			</div>
-			<!-- .content_wrapper -->
 			<div class="clear"></div>
-		</div>
-		<!-- #message_wrapper -->',
+		</div>',
 		$message,
 		$button_link,
 		$button_text

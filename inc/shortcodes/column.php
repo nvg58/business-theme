@@ -14,7 +14,7 @@ function wtm_column_shortcode( $atts, $content = '' ) {
 
 	$out = sprintf(
 		'<div class="%s">
-				%s
+			%s
 		</div>',
 		$class,
 		do_shortcode( $content )

@@ -1,6 +1,6 @@
 <?php
 
-class Social_Icons_Widget extends WP_Widget {
+class WTM_Social_Icons_Widget extends WP_Widget {
 
 	/**
 	 * Register widgets with WordPress.
@@ -37,9 +37,11 @@ class Social_Icons_Widget extends WP_Widget {
 		foreach ( $icons as $icon ) {
 			if ( ! isset( $instance[ $icon ] ) || $instance[ $icon ] != '' ) {
 				$social_link = sprintf(
-					'<a href="%1$s"><img src="%2$s/img/social/white/%3$s.png" width="30" height="30" alt="%3$s" /></a> ',
+					'<a href="%1$s">
+						<img src="%2$s/img/social/white/%3$s.png" width="30" height="30" alt="%3$s" />
+					</a> ',
 					$instance[ $icon ],
-					get_template_directory_uri(),
+					TEMLATE_PATH_URI,
 					$icon
 				);
 				echo $social_link;
@@ -77,8 +79,9 @@ class Social_Icons_Widget extends WP_Widget {
 
 			foreach ( $icons as $icon ) {
 				?>
-				<label
-					for="<?php echo $this->get_field_id( $icon ); ?>"><?php _e( ucfirst( $icon . ':' ) ); ?></label>
+				<label for="<?php echo $this->get_field_id( $icon ); ?>">
+					<?php _e( ucfirst( $icon . ':' ) ); ?>
+				</label>
 				<input class="widefat" id="<?php echo $this->get_field_id( $icon ); ?>"
 				       name="<?php echo $this->get_field_name( $icon ); ?>" type="text"
 				       value="<?php echo esc_attr( $instance[ $icon ] ); ?>">

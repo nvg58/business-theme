@@ -18,12 +18,10 @@ function wtm_clients_shortcode( $atts, $content = '' ) {
 		<div class="viewall">
 			<a href="%s">View all</a>
 		</div>
-		<!-- .viewall -->
 
 		<div class="homepage_slider_section">
 	        %s
-	    </div>
-	    <!-- .homepage_slider_section -->',
+	    </div>',
 		$title,
 		$viewall_url,
 		do_shortcode( $content )

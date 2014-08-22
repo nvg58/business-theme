@@ -23,6 +23,7 @@ function wtm_button_shortcode( $atts, $content = '' ) {
 		$link,
 		$text
 	);
+
 	return $out;
 }
 

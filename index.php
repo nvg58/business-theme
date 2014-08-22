@@ -70,7 +70,7 @@ get_header();
 			<?php if ( $the_query->max_num_pages > 1 ): ?>
 				<div class="pagination">
 
-					<?php echo wtm_pagination( $the_query->max_num_pages, $the_query ); ?>
+					<?php echo wtm_pagination( $the_query ); ?>
 
 				</div>
 				<!-- .pagination -->

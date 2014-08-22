@@ -19,6 +19,7 @@ function wtm_alert_shortcode( $atts, $content = '' ) {
 		$color,
 		do_shortcode( $content )
 	);
+
 	return $out;
 }
 

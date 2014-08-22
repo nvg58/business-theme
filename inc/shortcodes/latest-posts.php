@@ -26,8 +26,7 @@ function wtm_latest_posts_shortcode( $atts, $content = '' ) {
 
 	$out .= latest_posts_slides();
 
-	$out .= '</div>
-			<!-- .homepage_slider_section -->';
+	$out .= '</div>';
 
 	return $out;
 }
@@ -52,7 +51,7 @@ function latest_posts_slides() {
 			if ( has_post_thumbnail( get_the_ID() ) ) {
 				$out .= '<img src="' . get_the_post_thumbnail( get_the_ID() ) . '" alt="blog slide"/>';
 			} else {
-				$out .= '<img src="' . get_template_directory_uri() . '/img/blogentry1.png" alt="blog slide"/>';
+				$out .= '<img src="' . TEMPLATE_PATH_URI . 'img/blogentry1.png" alt="blog slide"/>';
 			}
 			$out .= '<div class="flex-caption">
                         <div class="contentright">';
@@ -69,7 +68,6 @@ function latest_posts_slides() {
 	$out .= '
 			</ul>
 		</section>
-		<!-- .slider -->
 	';
 
 	return $out;

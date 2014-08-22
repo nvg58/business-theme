@@ -5,11 +5,14 @@
  * @package wtm_
  */
 
+define( 'TEMLATE_PATH', trailingslashit( get_template_directory() ) );
+define( 'TEMLATE_PATH_URI', trailingslashit( get_template_directory_uri() ) );
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
+	$content_width = 650; /* pixels */
 }
 
 if ( ! function_exists( 'wtm_setup' ) ) :
@@ -18,7 +21,7 @@ if ( ! function_exists( 'wtm_setup' ) ) :
 		/*
 		 * Make theme available for translation.
 		 */
-		load_theme_textdomain( 'wtm_', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'wtm_', TEMLATE_PATH . 'languages' );
 
 		/*
 		 * Add default posts and comments RSS feed links to head.
@@ -86,19 +89,19 @@ add_action( 'after_setup_theme', 'wtm_setup' );
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require TEMLATE_PATH . 'inc/template-tags.php';
 
 
 /**
  * Shortcode for this theme
  */
-require get_template_directory() . '/inc/shortcodes.php';
+require TEMLATE_PATH . 'inc/shortcodes/shortcodes.php';
 
 
 /**
  * Widgets for this theme
  */
-require get_template_directory() . '/inc/widgets.php';
+require TEMLATE_PATH . 'inc/widgets/widgets.php';
 
 
 /**
@@ -119,7 +122,7 @@ function wtm_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => __( 'Footerbar', 'wtm_' ),
-		'id'            => 'footerbar',
+		'id'            => 'footer-bar',
 		'description'   => '',
 		'before_widget' => '<div class="one_fourth_widget">',
 		'after_widget'  => '</div>',
@@ -129,7 +132,7 @@ function wtm_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => __( 'Copyright Bar', 'wtm_' ),
-		'id'            => 'copyrightbar',
+		'id'            => 'copyright-bar',
 		'description'   => '',
 		'before_widget' => '',
 		'after_widget'  => '',
@@ -150,14 +153,13 @@ function wtm_scripts() {
 	wp_enqueue_style( 'wtm-fancybox', get_template_directory_uri() . "/css/jquery.fancybox.css" );
 
 	// js
-	wp_enqueue_script( 'wtm-jQ', get_template_directory_uri() . "/js/jquery.js" );
-	wp_enqueue_script( 'wtm-flexslider', get_template_directory_uri() . "/js/jquery.flexslider-min.js" );
-	wp_enqueue_script( 'wtm-easing', get_template_directory_uri() . "/js/jquery.easing.1.3.js" );
-	wp_enqueue_script( 'wtm-hoverIntent', get_template_directory_uri() . "/js/hoverIntent.js" );
-	wp_enqueue_script( 'wtm-sfmenu', get_template_directory_uri() . "/js/jquery.sfmenu.js" );
-//	wp_enqueue_script( 'wtm-retina', get_template_directory_uri() . "/js/retina.js" );
-	wp_enqueue_script( 'wtm-custom', get_template_directory_uri() . "/js/custom.js" );
-	wp_enqueue_script( 'wtm-fancybox', get_template_directory_uri() . "/js/jquery.fancybox.js" );
+	wp_enqueue_script( 'wtm-flexslider', get_template_directory_uri() . "/js/jquery.flexslider-min.js", array( 'jquery' ) );
+	wp_enqueue_script( 'wtm-easing', get_template_directory_uri() . "/js/jquery.easing.1.3.js", array( 'jquery' ) );
+	wp_enqueue_script( 'wtm-hoverIntent', get_template_directory_uri() . "/js/hoverIntent.js", array( 'jquery' ) );
+	wp_enqueue_script( 'wtm-sfmenu', get_template_directory_uri() . "/js/jquery.sfmenu.js", array( 'jquery' ) );
+	wp_enqueue_script( 'wtm-retina', get_template_directory_uri() . "/js/retina.js", array( 'jquery' ) );
+	wp_enqueue_script( 'wtm-custom', get_template_directory_uri() . "/js/custom.js", array( 'jquery' ) );
+	wp_enqueue_script( 'wtm-fancybox', get_template_directory_uri() . "/js/jquery.fancybox.js", array( 'jquery' ) );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -196,26 +198,13 @@ function get_custom_excerpt( $limit = 24, $more = '', $wrapper = '', $has_link =
 
 	if ( count( $excerpt ) >= $limit ) {
 		array_pop( $excerpt );
-		$excerpt = implode( " ", $excerpt ) . $more_link;
+		$excerpt = implode( ' ', $excerpt ) . $more_link;
 	} else {
-		$excerpt = implode( " ", $excerpt );
+		$excerpt = implode( ' ', $excerpt );
 	}
 
 	return $excerpt;
 }
-
-//add_filter( 'excerpt_more', 'custom_excerpt_more' );
-
-
-/**
- *  Custom excerpt length
- *
- */
-//function custom_excerpt_length( $length ) {
-//	return 24;
-//}
-//
-//add_filter( 'excerpt_length', 'custom_excerpt_length' );
 
 
 /**
@@ -263,7 +252,7 @@ remove_filter( 'the_excerpt', 'wpautop' );
  * Register Copyright_Message_Widget widgets
  */
 function register_copyright_message_widget() {
-	register_widget( 'Copyright_Message_Widget' );
+	register_widget( 'WTM_Copyright_Message_Widget' );
 }
 
 add_action( 'widgets_init', 'register_copyright_message_widget' );
@@ -273,7 +262,7 @@ add_action( 'widgets_init', 'register_copyright_message_widget' );
  * Register Social_Icons_Widget widgets
  */
 function register_social_icons_widget() {
-	register_widget( 'Social_Icons_Widget' );
+	register_widget( 'WTM_Social_Icons_Widget' );
 }
 
 add_action( 'widgets_init', 'register_social_icons_widget' );
@@ -319,8 +308,6 @@ function custom_staff_post_type() {
 		'capability_type'     => 'page',
 	);
 	register_post_type( 'staff', $args );
-
-	flush_rewrite_rules();
 }
 
 // Hook into the 'init' action
@@ -345,8 +332,6 @@ function create_case_study() {
 			'rewrite'       => array( 'slug' => 'case_study' ),
 		)
 	);
-
-	flush_rewrite_rules();
 }
 
 

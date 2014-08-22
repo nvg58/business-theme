@@ -11,11 +11,15 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?php wp_title( '|', true, 'right' ); bloginfo( 'name' )?></title>
+	<title><?php wp_title( '|', true, 'right' ); ?></title>
 
-	<!--[if IE 7 ]>    <html class= "ie7"> <![endif]-->
-	<!--[if IE 8 ]>    <html class= "ie8"> <![endif]-->
-	<!--[if IE 9 ]>    <html class= "ie9"> <![endif]-->
+
+	<!--[if IE 7 ]>
+	<html class="ie7"> <![endif]-->
+	<!--[if IE 8 ]>
+	<html class="ie8"> <![endif]-->
+	<!--[if IE 9 ]>
+	<html class="ie9"> <![endif]-->
 
 	<!--[if lt IE 9]>
 	<script>
@@ -28,7 +32,7 @@
 	</script>
 	<![endif]-->
 
-	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.png" />
+	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.png"/>
 
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -53,7 +57,9 @@
 
 			<form role="search" method="get" id="searchform" action="#">
 
-				<input type="text" value="search" id="searchBox" name="s" onblur="if(this.value == '') { this.value = 'search'; }" onfocus="if(this.value == 'search') { this.value = ''; }">
+				<input type="text" value="search" id="searchBox" name="s"
+				       onblur="if(this.value == '') { this.value = 'search'; }"
+				       onfocus="if(this.value == 'search') { this.value = ''; }">
 				<span class="searchme"></span>
 			</form>
 
@@ -73,7 +79,9 @@
 	<div class="content_wrapper">
 
 		<div id="logo">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_template_directory_uri() . '/img/toplogo.png' ?>" width="213" height="33" alt="Business Essentials" /></a>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img
+					src="<?php echo TEMPLATE_PATH_URI . 'img/toplogo.png' ?>" width="213" height="33"
+					alt="Business Essentials"/></a>
 
 		</div>
 		<!-- .logo -->

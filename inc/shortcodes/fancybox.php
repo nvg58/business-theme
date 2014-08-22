@@ -17,7 +17,8 @@ function wtm_fancybox_shortcode( $atts, $content = '' ) {
 	$out = sprintf(
 		'<p>
 			<a class="fancybox" href="%s" data-fancybox-group="gallery" title="%s">
-			<img src="%s" class="align%s" width="300" height="169""/></a>
+				<img src="%s" class="align%s" width="300" height="169"/>
+			</a>
 			%s
 		</p>',
 		$img_url,

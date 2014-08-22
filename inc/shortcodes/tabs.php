@@ -46,9 +46,10 @@ add_shortcode( 'tabs', 'wtm_tabs_shortcode' );
  */
 function wtm_tab_shortcode( $atts, $content = '' ) {
 	extract( shortcode_atts( array(
-		'id'    => '',
 		'title' => '',
 	), $atts ) );
+
+	$id = uniqid();
 
 	$out = sprintf(
 		'<div id="tab%s" class="tab_content">
